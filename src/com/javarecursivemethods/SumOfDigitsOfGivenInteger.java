@@ -1,0 +1,25 @@
+package com.javarecursivemethods;
+
+public class SumOfDigitsOfGivenInteger {
+
+	public static int calculateDigitSum(int number) {
+		// Base case: If the number is a single digit, return the number itself
+		if (number < 10) {
+			return number;
+		}
+
+		// Recursive case: calculate the sum of the last digit and the digit sum of
+		// the remaining number
+		int lastDigit = number % 10;
+		int remainingNumber = number / 10;
+		return lastDigit + calculateDigitSum(remainingNumber);
+	}
+
+	public static void main(String[] args) {
+
+		int num = 143;
+		int digitSum = calculateDigitSum(num);
+		System.out.println("The sum of digits of " + num + " is: " + digitSum);
+	}
+
+}
